@@ -3,13 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Brewery
+use App\Models\Brewery;
 
 class BreweryController extends Controller
 {
     //
-    public function getAll()
+
+    public static function getAll($withBeers)
     {
-        return Brewery::all()
+        if ($withBeers) {
+            return Brewery::with('beers')->get()->toJson();
+        }
+        return Brewery::all()->toJson();
     }
 }

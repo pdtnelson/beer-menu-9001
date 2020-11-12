@@ -21,4 +21,9 @@ class Beer extends Model
         'ABV',
         'IBU'
     ];
+
+    public function brewery()
+    {
+        $this->belongsTo('App\Models\Brewery');
+    }
 }
