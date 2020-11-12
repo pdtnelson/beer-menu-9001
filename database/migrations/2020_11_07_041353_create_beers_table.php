@@ -17,10 +17,12 @@ class CreateBeersTable extends Migration
             $table->id();
             $table->foreignId('brewery_id')->constrained();
             $table->string('name');
-            $table->string('description');
-            $table->string('type'); // IPA, Stout, Pilsner, etc
-            $table->decimal('ABV');
-            $table->integer('IBU');
+            $table->decimal('abv');
+            $table->integer('ibu');
+            $table->string('filepath');
+            $table->text('description');
+            $table->string('style_type');
+            $table->string('category_type');
             $table->timestamps();
         });
     }

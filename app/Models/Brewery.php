@@ -17,8 +17,15 @@ class Brewery extends Model
      */
     protected $fillable = [
         'name',
+        'address1',
+        'city',
+        'zip_code',
+        'country',
+        'phone',
+        'filepath',
         'description',
-        'location'
+        'latitude',
+        'longitude'
     ];
 
     // define relationships
