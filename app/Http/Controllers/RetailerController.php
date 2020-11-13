@@ -7,11 +7,8 @@ use App\Models\Retailer;
 class RetailerController extends Controller
 {
     //
-    public static function getAll($withMenu)
+    public static function getAll()
     {
-        if ($withMenu) {
-            return Retailer::with('menu')->get()->toJson();
-        }
         return Retailer::all()->toJson();
     }
 }

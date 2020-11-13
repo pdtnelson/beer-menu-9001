@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BeerController;
+use App\Http\Controllers\MenuController;
 use App\Http\Controllers\RetailerController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -24,8 +25,9 @@ Route::get('/brewery', function (Request $request) {
     return BreweryController::getAll($request->query('withBeers'));
 });
 
-Route::get('/retailer', function (Request $request) {
-    return RetailerController::getAll($request->query('withMenu'));
+Route::get('/retailer', [RetailerController::class, 'getAll']);
+Route::get('/retailer/{retailerId}/menu', function($retailerId) {
+    return MenuController::getMenuByRetailerId($retailerId);
 });
 
 Route::get('/beer', [BeerController::class, 'getAll']);
