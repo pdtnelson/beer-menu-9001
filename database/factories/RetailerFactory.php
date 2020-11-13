@@ -22,10 +22,11 @@ class RetailerFactory extends Factory
      */
     public function definition()
     {
+        $cities = ['Boise', 'Seattle', 'Denver', 'Columbus', 'Portland (ME)', 'Victor', 'Sun Valley', 'WinterPark'];
         return [
-            'name' => $this->faker->name,
-            'description' => Str::random(20),
-            'location' => Str::random(20),
+            'name' => $this->faker->company,
+            'description' => $this->faker->text,
+            'city' => $cities[mt_rand(0, sizeof($cities) - 1)],
         ];
     }
 }

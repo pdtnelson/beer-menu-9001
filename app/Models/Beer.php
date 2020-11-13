@@ -24,6 +24,11 @@ class Beer extends Model
 
     public function brewery()
     {
-        $this->belongsTo('App\Models\Brewery');
+        return $this->belongsTo('App\Models\Brewery');
+    }
+
+    public function menu()
+    {
+        return $this->belongsToMany('App\Models\Menu');
     }
 }

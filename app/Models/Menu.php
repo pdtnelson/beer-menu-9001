@@ -9,8 +9,8 @@ class Menu extends Model
 {
     use HasFactory;
 
-    public function beers()
-    {
-        return $this->hasMany('App\Models\Beer');
-    }
+//    public function beers()
+//    {
+//        return $this->belongsToMany('App\Models\Beer');
+//    }
 }

@@ -22,9 +22,7 @@ class MenuFactory extends Factory
      */
     public function definition()
     {
-        return [
-            'name' => $this->faker->name,
-            'beer_id' => mt_rand(1, count(Beer::all()->toArray()))
-        ];
+
+        die('lol');
     }
 }

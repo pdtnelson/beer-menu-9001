@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Beer;
 use App\Models\Retailer;
 use Illuminate\Database\Seeder;
 
@@ -15,8 +16,7 @@ class RetailerSeeder extends Seeder
     public function run()
     {
         Retailer::factory()
-            ->times(10)
-            ->hasMenu(1)
+            ->times(24)
             ->create();
     }
 }

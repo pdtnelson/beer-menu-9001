@@ -2,7 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\Beer;
 use App\Models\Menu;
+use App\Models\Retailer;
 use Illuminate\Database\Seeder;
 
 class MenuSeeder extends Seeder
@@ -14,9 +16,17 @@ class MenuSeeder extends Seeder
      */
     public function run()
     {
-        Menu::factory()
-            ->times(1)
-            ->hasBeers(20)
-            ->create();
+        $retailers = Retailer::all();
+        foreach($retailers as $retailer) {
+            Menu::create(['retailer_id' => $retailer->id]);
+        }
+
+        $beers = Beer::all();
+        Menu::all()->each(function ($menu) use ($beers) {
+            $menu->beers()->attach(
+                $beers->random(rand(1, 25))->pluck('id')->toArray()
+            );
+        });
+
     }
 }

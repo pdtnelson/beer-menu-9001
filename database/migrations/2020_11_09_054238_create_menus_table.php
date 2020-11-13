@@ -16,8 +16,6 @@ class CreateMenusTable extends Migration
         Schema::create('menus', function (Blueprint $table) {
             $table->id();
             $table->foreignId('retailer_id');
-            $table->foreignId('beer_id')->default(null);
-            $table->string('name');
             $table->timestamps();
         });
     }

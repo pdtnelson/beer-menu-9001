@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRetailersTable extends Migration
+class MenuBeersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateRetailersTable extends Migration
      */
     public function up()
     {
-        Schema::create('retailers', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('description');
-            $table->string('city');
-            $table->timestamps();
+        Schema::create('menu_beers', function (Blueprint $table) {
+            $table->foreignId('menu_id')->references('id')->on('menus');
+            $table->foreignId('beer_id')->references('id')->on('beers');
+            $table->unique(['menu_id', 'beer_id']);
         });
     }
 
@@ -29,6 +27,6 @@ class CreateRetailersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('retailers');
+        //
     }
 }
