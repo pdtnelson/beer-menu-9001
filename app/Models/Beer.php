@@ -29,6 +29,6 @@ class Beer extends Model
 
     public function menu()
     {
-        return $this->belongsToMany('App\Models\Menu');
+        return $this->belongsToMany('App\Models\Menu', 'menu_beers');
     }
 }
