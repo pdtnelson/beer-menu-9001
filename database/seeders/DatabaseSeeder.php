@@ -15,7 +15,10 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
-            BrewerySeeder::class
+            BrewerySeeder::class,
+            BeerSeeder::class,
+            RetailerSeeder::class,
+            MenuSeeder::class
         ]);
     }
 }

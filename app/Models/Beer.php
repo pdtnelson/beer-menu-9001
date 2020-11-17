@@ -21,4 +21,14 @@ class Beer extends Model
         'ABV',
         'IBU'
     ];
+
+    public function brewery()
+    {
+        return $this->belongsTo('App\Models\Brewery');
+    }
+
+    public function menu()
+    {
+        return $this->belongsToMany('App\Models\Menu', 'menu_beers');
+    }
 }

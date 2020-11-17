@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBeersTable extends Migration
+class CreateRetailersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,11 @@ class CreateBeersTable extends Migration
      */
     public function up()
     {
-        Schema::create('beers', function (Blueprint $table) {
+        Schema::create('retailers', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('brewery_id')->constrained();
             $table->string('name');
-            $table->decimal('abv');
-            $table->integer('ibu');
-            $table->string('filepath');
-            $table->text('description');
-            $table->string('style_type');
-            $table->string('category_type');
+            $table->string('description');
+            $table->string('city');
             $table->timestamps();
         });
     }
@@ -34,6 +29,6 @@ class CreateBeersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('beers');
+        Schema::dropIfExists('retailers');
     }
 }
