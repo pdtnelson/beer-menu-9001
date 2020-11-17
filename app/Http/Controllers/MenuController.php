@@ -9,6 +9,6 @@ class MenuController extends Controller
 {
     public static function getMenuByRetailerId($retailerId) {
         // needs to be find by or summin like that
-        return Menu::where('retailer_id', $retailerId)->with('beers')->get()->toJson();
+        return Menu::where('retailer_id', $retailerId)->with('beers')->first()->toJson();
     }
 }
