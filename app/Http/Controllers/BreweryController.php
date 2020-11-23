@@ -16,4 +16,8 @@ class BreweryController extends Controller
         }
         return Brewery::all()->toJson();
     }
+
+    public static function create($newBrewery) {
+        return Brewery::create($newBrewery);
+    }
 }
