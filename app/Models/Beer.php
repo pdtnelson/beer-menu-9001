@@ -15,11 +15,15 @@ class Beer extends Model
      * @var array
      */
     protected $fillable = [
+        'brewery_id',
         'name',
         'description',
         'type',
-        'ABV',
-        'IBU'
+        'abv',
+        'ibu',
+        'filepath',
+        'style_type',
+        'category_type'
     ];
 
     public function brewery()
