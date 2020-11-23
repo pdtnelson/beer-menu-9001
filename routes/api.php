@@ -34,3 +34,7 @@ Route::get('/beer', [BeerController::class, 'getAll']);
 Route::get('/beer/{beerID}', function($beerID) {
     return BeerController::getBeerById($beerID);
 });
+Route::post('/beer', function(Request $request) {
+    return BeerController::createBeer($request);
+
+});
