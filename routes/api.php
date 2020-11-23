@@ -31,3 +31,6 @@ Route::get('/retailer/{retailerId}/menu', function($retailerId) {
 });
 
 Route::get('/beer', [BeerController::class, 'getAll']);
+Route::get('/beer/{beerID}', function($beerID) {
+    return BeerController::getBeerById($beerID);
+});

@@ -7,8 +7,9 @@ use Illuminate\Http\Request;
 
 class BeerController extends Controller
 {
-    //
-
+    public static function getBeerById($beerId) {
+        return Beer::where('id', $beerId)->first()->toJson();
+    }
     public static function getAll() {
         return Beer::all();
     }
