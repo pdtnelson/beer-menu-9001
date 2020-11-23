@@ -39,6 +39,9 @@ Route::get('/retailer', [RetailerController::class, 'getAll']);
 Route::get('/retailer/{retailerId}/menu', function($retailerId) {
     return MenuController::getMenuByRetailerId($retailerId);
 });
+Route::post('/retailer', function(Request $request) {
+    return RetailerController::create($request->all());
+});
 
 /**
  * Beer routes

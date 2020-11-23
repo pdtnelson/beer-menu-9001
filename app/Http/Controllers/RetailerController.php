@@ -11,4 +11,7 @@ class RetailerController extends Controller
     {
         return Retailer::all()->toJson();
     }
+    public static function create($request) {
+        return Retailer::create($request);
+      }
 }
