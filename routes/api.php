@@ -29,7 +29,7 @@ Route::get('/brewery', function(Request $request) {
 });
 
 Route::post('/brewery', function(Request $request) {
-    return BreweryController::create($request->all());
+    return BreweryController::create($request);
 });
 
 /**
