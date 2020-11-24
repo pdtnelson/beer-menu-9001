@@ -14,7 +14,6 @@ class BeerController extends Controller
         return Beer::all();
     }
     public static function create($request) {
-        // die(print_r($request));
         return Beer::create($request);
       }
 }
