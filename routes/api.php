@@ -40,7 +40,7 @@ Route::get('/retailer/{retailerId}/menu', function($retailerId) {
     return MenuController::getMenuByRetailerId($retailerId);
 });
 Route::post('/retailer', function(Request $request) {
-    return RetailerController::create($request->all());
+    return RetailerController::create($request);
 });
 
 /**
@@ -51,7 +51,7 @@ Route::get('/beer/{beerID}', function($beerID) {
     return BeerController::getBeerById($beerID);
 });
 Route::post('/beer', function(Request $request) {
-    return BeerController::create($request->all());
+    return BeerController::create($request);
     
 
 });
