@@ -13,4 +13,7 @@ class BeerController extends Controller
     public static function getAll() {
         return Beer::all();
     }
+    public static function create($request) {
+        return Beer::create($request);
+      }
 }
