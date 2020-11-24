@@ -9,6 +9,13 @@ class Retailer extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'description',
+        'city'
+
+    ];
+
     public function menu()
     {
         return $this->hasOne('App\Models\Menu');

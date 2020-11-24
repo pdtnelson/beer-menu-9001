@@ -18,7 +18,6 @@ class Beer extends Model
         'brewery_id',
         'name',
         'description',
-        'type',
         'abv',
         'ibu',
         'filepath',
