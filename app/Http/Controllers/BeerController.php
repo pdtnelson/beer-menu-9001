@@ -8,15 +8,17 @@ use Symfony\Component\HttpKernel\Exception\UnprocessableEntityHttpException;
 
 class BeerController extends Controller
 {
+
     public static function getBeerById($beerId) {
         return Beer::where('id', $beerId)->first()->toJson();
     }
+
     public static function getAll() {
         return Beer::all();
     }
+
     public static function create($request) {
         try {
-            // die(print_r($request->all()));
             $request->validate([
                 'brewery_id'  => 'required',
                 'name'  => 'required',
@@ -33,5 +35,6 @@ class BeerController extends Controller
             throw new UnprocessableEntityHttpException("Your input is incorrect"); 
         }
         
-      }}
+    }
+}
 
